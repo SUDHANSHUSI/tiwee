@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Author</th>
+    <th>Published</th>
+    <th>Created At</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of postsList">
+      <td>{{post.title}}</td>
+      <td>{{post.body | trim:5}}</td>
+      <td>{{post.author}}</td>
+      <td>{{post.isPublished}}</td>
+      <td>{{post.date | date}}</td>
+      <td>
+        <a routerLink="/admin/post/edit/{{post._id}}" class="btn btn-primary">Edit</a>
+        <button (click)="onDeleteClick(post._id)" type="button" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

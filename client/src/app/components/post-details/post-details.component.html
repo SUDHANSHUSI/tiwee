@@ -1,0 +1,7 @@
+<div class="post-details pt-3 pb-3">
+  <div class="text-secondary mb-4 text-right">
+    {{post.date | date: 'longDate'}}<br>
+    Author: {{post.author}}
+  </div>
+  <div [innerHTML]="post.body"></div>
+</div>
